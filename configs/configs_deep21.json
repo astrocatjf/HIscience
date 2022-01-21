@@ -1,0 +1,82 @@
+{
+	"pca_params" 			:{
+		
+		"N_NU"			: 691, 
+		"N_COMP_MASK"	: [2,4],
+		"NU_AVG"		: 1,
+        "N_NU_OUT"      : 64, 
+        "NU_START"      : 627, 
+		"DO_NU_AVG"		: 0,
+        "ADD_NOISE"     : 1,
+        "DO_ROT"        : 0,
+		"N_WINDS"		: 192,
+		"WINDOW_NSIDE"  : 4,
+		"bin_min"       : 0,
+		"bin_max" 		: 192,
+        "N_SIMS"        : 100,
+		"num_sets"      : 1
+
+	},
+
+
+	"parent_configs"		:{
+		"is_train"		: 1,
+		"is_test"		: 0,
+		"do_analysis"	: 0
+	},
+
+
+
+	"cosmo_params"			:{
+	},
+
+	"directory_configs"		:{
+        "sim_path"          : "/obscos2/crime/data/", 
+		"data_path"      	: "/obscos2/crime/data/output3/",
+		"model_output"		: "/obscos2/crime/data/output2/unet_results_1_193/",
+		"info_path"         : "/obscos2/crime/old/output/nuTable/"
+	},
+
+	"unet_params"			:{
+
+    	"bin_min"         : 1,
+	    "bin_max"         : 193,
+	    "nu_start"        : 1,
+	    "nu_skip"         : 3,
+	    "nu_dim"          : 64,
+	    "x_dim"           : 64,
+	    "n_filters"       : 32,
+	    "conv_width"      : 3,
+	    "network_depth"   : 6,
+	    "batch_size"      : 16,
+	    "num_epochs"      : 50,
+	    "act"             : "relu",
+	    "lr"              : 0.0002,
+	    "wd"              : 1e-5,
+	    "batchnorm_in"    : 1,
+	    "batchnorm_out"   : 1,
+	    "batchnorm_up"    : 1,
+	    "batchnorm_down"  : 1,
+	    "momentum"        : 0.021165395601698535,
+	    "model_num"       : 1,
+	    "data_path"       : "/home/rubin/",
+	    "out_dir"         : "/obscos2/crime/data/output/",
+	    "model_path"      : "/obscos2/crime/data/output/unet_results_1_193/",
+	    "load_model"      : 0
+	},
+
+	"analysis_params"		:{
+
+		"data_path"       : "/mnt/home/rubin/ceph/pca_ska/nside4_avg/test/",
+		"info_path" 	  : "/mnt/home/rubin/repositories/deep21/sim_info/",
+		"rearr_file"      : "rearr_nside4.npy",
+		"outdir"          : "/mnt/home/rubin/ceph/deep21_results/polarized/",
+		"num_nets" 		  : 9,
+		"num_sims" 		  : 10,
+		"sim_start" 	  : 91,
+		"remove_mean"     : 0
+
+	}
+
+	
+	}
